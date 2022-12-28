@@ -1,6 +1,12 @@
 #include "Bureaucrat.hpp"
 
 // Constructors
+Bureaucrat::Bureaucrat( void ) : _name("Default Bureaucrat")
+{
+	_grade = 150;
+	std::cout << "\e[0;33mDefault Constructor called of Bureaucrat\e[0m" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	if (grade > 150)
@@ -8,7 +14,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 	else if (grade < 1)
 		throw GradeTooHighException();
 	_grade = grade;
-	std::cout << "\e[0;33mDefault Constructor called of Bureaucrat\e[0m" << std::endl;
+	std::cout << "\e[0;33mFields Constructor called of Bureaucrat\e[0m" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy)
@@ -52,22 +58,16 @@ std::string Bureaucrat::getName( void ) const
 
 void Bureaucrat::DecrementGrade( void )
 {
-	int temp;
-
-	temp = _grade + 1;
-	if (temp > 150)
+	if (_grade + 1 > 150)
 		throw GradeTooHighException();
-	_grade = temp;
+	_grade++;
 }
 
 void Bureaucrat::IncrementGrade( void )
 {
-	int temp;
-
-	temp = _grade - 1;
-	if (temp < 1)
+	if (_grade - 1 < 1)
 		throw GradeTooLowException();
-	_grade = temp;
+	_grade--;
 }
 
 void	Bureaucrat::signForm(Form form)

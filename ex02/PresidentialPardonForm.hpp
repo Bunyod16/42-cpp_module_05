@@ -11,6 +11,7 @@ class PresidentialPardonForm: public AForm
 {
 	public:
 		// Constructors
+		PresidentialPardonForm();
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
 		// Destructor

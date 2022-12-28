@@ -11,6 +11,7 @@ class ShrubberyCreationForm: public AForm
 {
 	public:
 		// Constructors
+		ShrubberyCreationForm( void );
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		// Destructor

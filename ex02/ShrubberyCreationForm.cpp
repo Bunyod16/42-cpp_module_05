@@ -1,9 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 // Constructors
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :AForm("ShrubberyCreationForm", 145, 137), _target(target) 
+ShrubberyCreationForm::ShrubberyCreationForm( void ) :AForm("ShrubberyCreationForm", 145, 137), _target("Default target") 
 {
 	std::cout << "\e[0;33mDefault Constructor called of ShrubberyCreationForm\e[0m" << std::endl;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :AForm("ShrubberyCreationForm", 145, 137), _target(target) 
+{
+	std::cout << "\e[0;33mFields Constructor called of ShrubberyCreationForm\e[0m" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : AForm("ShrubberyCreationForm", 145, 137)

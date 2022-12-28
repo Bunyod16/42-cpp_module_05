@@ -11,6 +11,7 @@ class Bureaucrat
 {
 	public:
 		// Constructors
+		Bureaucrat( void );
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat &copy);
 		

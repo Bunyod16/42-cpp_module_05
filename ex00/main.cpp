@@ -13,12 +13,12 @@ void testDecrementException()
     Boss.DecrementGrade();
 }
 
-void testHighException()
+void testLowGradeException()
 {
     Bureaucrat Boss("Sam", 555);
 }
 
-void testLowException()
+void testHighGradeException()
 {
     Bureaucrat Boss("Sam", -15);
 }
@@ -34,13 +34,9 @@ int main(void)
 
     try
     {
-        testLeftShiftOverload();
+        testHighGradeException();
     }
-    catch (Bureaucrat::GradeTooHighException& e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    catch  (Bureaucrat::GradeTooLowException &e)
+    catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }

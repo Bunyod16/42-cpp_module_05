@@ -9,6 +9,7 @@ class Bureaucrat
 {
 	public:
 		// Constructors
+		Bureaucrat();
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat &copy);
 		
@@ -20,10 +21,10 @@ class Bureaucrat
 		std::string &operator<<(const Bureaucrat &assign);
     	// throw an instance of MyException
 
-		int getGrade( void ) const;
-		void IncrementGrade( void );
-		void DecrementGrade( void );
+		int			getGrade( void ) const;
 		std::string getName( void ) const;
+		void		IncrementGrade( void );
+		void		DecrementGrade( void );
 
 		class GradeTooHighException : public std::exception
 		{

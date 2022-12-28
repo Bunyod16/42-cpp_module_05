@@ -2,6 +2,11 @@
 #include <iostream>
 
 // Constructors
+AForm::AForm( void ) : _name("Default"), _sign_grade(100), _execute_grade(100)
+{
+	std::cout << "\e[0;33mDefault Constructor called of AForm\e[0m" << std::endl;
+}
+
 AForm::AForm(std::string name, int sign_grade, int execute_grade) : _name(name)
 {
 	if (sign_grade > 150 || execute_grade > 150)
@@ -11,7 +16,7 @@ AForm::AForm(std::string name, int sign_grade, int execute_grade) : _name(name)
 	_is_signed = false;
 	_sign_grade = sign_grade;
 	_execute_grade = execute_grade;
-	std::cout << "\e[0;33mDefault Constructor called of AForm\e[0m" << std::endl;
+	std::cout << "\e[0;33mFields Constructor called of AForm\e[0m" << std::endl;
 }
 
 AForm::AForm(const AForm &copy)

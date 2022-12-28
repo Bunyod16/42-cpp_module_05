@@ -1,6 +1,12 @@
 #include "Bureaucrat.hpp"
 
 // Constructors
+Bureaucrat::Bureaucrat( void ) : _name("Default Bureaucrat")
+{
+	_grade = 150;
+	std::cout << "\e[0;33mDefault Constructor called of Bureaucrat\e[0m" << std::endl;
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	if (grade > 150)

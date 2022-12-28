@@ -2,24 +2,17 @@
 #include <iostream>
 
 // Constructors
-Form::Form(std::string name, int sign_grade, int execute_grade) : _name(name)
+Form::Form(std::string name, int sign_grade, int execute_grade) : _name(name), _sign_grade(sign_grade), _execute_grade(execute_grade), _is_signed(false)
 {
 	if (sign_grade > 150 || execute_grade > 150)
 		throw GradeTooLowException();
 	else if (sign_grade < 1 || execute_grade < 1)
 		throw GradeTooHighException();
-	_is_signed = false;
-	_sign_grade = sign_grade;
-	_execute_grade = execute_grade;
 	std::cout << "\e[0;33mDefault Constructor called of Form\e[0m" << std::endl;
 }
 
-Form::Form(const Form &copy)
+Form::Form(const Form &copy) : _name(copy.getName()), _sign_grade(copy.getSignGrade()), _execute_grade(copy.getExecuteGrade()), _is_signed(copy.isSigned())
 {
-	_name = copy.getName();
-	_is_signed = copy.isSigned();
-	_sign_grade = copy.getSignGrade();
-	_execute_grade = copy.getExecuteGrade();
 	std::cout << "\e[0;33mCopy Constructor called of Form\e[0m" << std::endl;
 }
 
@@ -34,10 +27,7 @@ Form::~Form()
 // Operators
 Form & Form::operator=(const Form &assign)
 {
-	_name = assign.getName();
 	_is_signed = assign.isSigned();
-	_sign_grade = assign.getSignGrade();
-	_execute_grade = assign.getExecuteGrade();
 	return *this;
 }
 

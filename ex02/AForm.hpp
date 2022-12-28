@@ -11,6 +11,7 @@ class AForm
 {
 	public:
 		// Constructors
+		AForm();
 		AForm(std::string name, int sign_grade, int execute_grade);
 		AForm(const AForm &copy);
 		
@@ -59,7 +60,7 @@ class AForm
 		bool		_is_signed;
 		int			_sign_grade;
 		int			_execute_grade;
-		virtual void	action( void ) const;
+		virtual void	action( void ) const = 0;
 
 		
 };

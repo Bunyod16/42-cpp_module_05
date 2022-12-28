@@ -59,15 +59,11 @@ int main(void)
 
     try
     {
-        testFormSuccess();
+        testFormError();
     }
-    catch (Bureaucrat::GradeTooHighException& e)
+    catch (std::exception& e)
     {
-        std::cout << e.what() << std::endl;
-    }
-    catch  (Bureaucrat::GradeTooLowException &e)
-    {
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception: "<< e.what() << std::endl;
     }
     std::cout << "END" << std::endl;
 }

@@ -11,7 +11,7 @@ int main( void )
     Intern  someRandomIntern;
     AForm*   rrf;
     Bureaucrat Boss("Boss", 1);
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    rrf = someRandomIntern.makeForm("shrubbery form", "Bender");
     Boss.signForm(*rrf);
     (*rrf).execute(Boss);
     delete(rrf);
